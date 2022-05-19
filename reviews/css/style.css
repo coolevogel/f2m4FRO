@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.section{
+    height: 100rem; /*placeholder*/
+}
+
+.section--first{
+    background: green;
+}
+
+.section--second{
+    background: blue;
+}
+
+.section--reviews{
+    padding: 4rem;
+    height: auto;
+    background: black;
+    display: flex;
+    align-items: center;
+}
+
+.arrow{
+    width: 10%;
+    height: 100%;
+    background: black;
+    font-size: 300%;
+    outline: 0;
+    border: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow:hover{
+    cursor: pointer;
+}
+
+.reviews{
+    justify-content: center;
+    display: flex;
+    background: black;
+    align-items: center;
+    height: 100%;
+    gap: 4rem;
+    width: 80%; 
+    flex-wrap: wrap;
+}
+
+.review{
+    position:relative;
+    display: flex;
+    min-height: 25rem;
+    flex-direction: column;
+    padding: 4rem;
+    list-style: none;
+    width: 30rem;
+    background: white;
+    border-radius: 3rem;
+    box-shadow: 1rem 1rem 0 0 aqua;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
+}
+
+.review:nth-of-type(4), .review:nth-of-type(5), .review:nth-of-type(6){
+    display: none;
+}
+
+.quote{
+    font-size: 500%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+}
+
+.stars{
+    color: gold;
+}
+
+.review p{
+    font-size: 65%;
+    font-style: italic;
+    border-bottom: 0.3rem solid black;
+    padding-bottom: 2rem;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@media  screen and (max-width: 50rem) {
+    .arrow{
+        display: none;
+    }
+    .reviews{
+        width: 100%;
+    }
+    
+}
