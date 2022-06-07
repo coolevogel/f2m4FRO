@@ -1,4 +1,4 @@
-*{
+*,*::before,*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,16 +10,36 @@ html{
 
 body{
     font-size: 2rem;
-    font-family: sans-serif;
+    font-family: 'roboto', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: white;
     min-height: 100vh;
 }
 
 .card{
     height: 50rem;
     width: 40rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    position: relative;
+    background: white;
+}
+
+.card::before{
+    content: "";
+    background: linear-gradient(#EB5353,#FFD24C,#3BACB6,#F73D93);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    filter: blur(10rem);
+    z-index: -1;
+    animation-name: rainbow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .card_figure{
@@ -31,11 +51,17 @@ body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .card_body{
     height: 50%;
-    width: 100%; 
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
 }
 
 .card_categories{
@@ -50,6 +76,10 @@ body{
     padding: 0.5rem 2rem;
 }
 
+.card_p{
+    font-size: 80%;
+}
+
 .card_category--tarkov{
     background: #3BaCB6;
 }
@@ -61,10 +91,33 @@ body{
 .card_footer{
     height: 20%;
     width: 100%;
-    background: green;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
 }
 
-.card_footer img{
-    width: 10%;
-    height: 10%;
+.card_pf{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.card_footer h3{
+    font-size: 100%;
+    font-weight: 400;
+}
+
+.card_footer p{
+    font-size: 80%;
+    font-weight: 400;
+}
+
+@keyframes rainbow {
+    from{
+        filter: blur(10rem);
+    }
+    to{
+        filter: blur(0.5rem);
+    }
 }
