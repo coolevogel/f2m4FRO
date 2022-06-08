@@ -16,6 +16,28 @@ body{
     justify-content: center;
     background: white;
     min-height: 100vh;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 8rem;
+}
+
+.circle{
+    height: 50rem;
+    width: 50rem;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle--first{
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right,#3BACB6,#F73D93);
+}
+
+.circle--second{
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right,#EB5353,#FFD24C);
 }
 
 .card{
@@ -111,6 +133,12 @@ body{
 .card_footer p{
     font-size: 80%;
     font-weight: 400;
+}
+
+@media screen and (max-width: 75rem) {
+    .circle{
+        display: none;
+    }
 }
 
 @keyframes rainbow {
