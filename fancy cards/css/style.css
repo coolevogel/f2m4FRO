@@ -110,6 +110,14 @@ body{
     background: #FFD24C;
 }
 
+.card_category--minecraft{
+    background: #59AB00;
+}
+
+.card_category--league{
+    background: #6B0099;
+}
+
 .card_footer{
     height: 20%;
     width: 100%;
